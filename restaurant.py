@@ -12,6 +12,7 @@ class Table:
         # This checks if the ordered item exists in the bill
         for i, existing_bill_item in enumerate(self.bill):
             if existing_bill_item['item'] == item and existing_bill_item['price'] == price:
+                index_of_existing_item = i
                 is_new_item = False
 
         # This adds item to the 'end' of the bill if it is a new item, and increments the quantity
@@ -33,6 +34,7 @@ class Table:
                 if existing_bill_item['quantity'] < quantity:
                     return False
                 is_new_item = False
+                index_of_existing_item = i
 
         # Returns False if the bill does not contain the item to be removed
         if is_new_item:
