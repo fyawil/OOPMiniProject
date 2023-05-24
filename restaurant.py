@@ -50,7 +50,7 @@ class Table:
     def get_subtotal(self):
         '''Return subtotal of table bill prior to addition of service charge'''
         sub_total = 0
-        for i, item in enumerate(self.bill):
+        for item in self.bill:
             sub_total += item['price'] * item['quantity']
         return sub_total
 
